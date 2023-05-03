@@ -107,7 +107,19 @@ function Update() {
     }
 }
 
+function VolumenSumergido() {
+    if(dinoPosY >= nivelDelMar) { //fuera del agua
+        return 0;
+    }else {
+        return dino.clientWidth * Math.min(nivelDelMar - dinoPosY, dino.clientHeight);
+    }
+}
 
+function HandleKeyDown(ev){
+    if(ev.keyCode == 32){
+        Saltar();
+    }
+}
 
 
 
