@@ -198,7 +198,22 @@ function CrearMoneda() {
     tiempoHastaMoneda = tiempoMonedaMin + Math.random() * (tiempoMonedaMax-tiempoMonedaMin) / gameVel;
 }
 
+function CrearObstaculo() {
+    var obstaculo = document.createElement("div");
+    contenedor.appendChild(obstaculo);
+    obstaculo.classList.add("obstaculo");
+    obstaculo.posX = contenedor.clientWidth;
+    obstaculo.style.left = contenedor.clientWidth+"px";
 
+    if(Math.random() > 0.5){
+        obstaculo.classList.add("obstaculo-flotante");
+    }else{
+        obstaculo.classList.add("obstaculo-hundido");
+    }
+
+    interactuables.push(obstaculo);
+    tiempoHastaObstaculo = tiempoObstaculoMin + Math.random() * (tiempoObstaculoMax-tiempoObstaculoMin) / gameVel;
+}
 
 
 
