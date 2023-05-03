@@ -165,7 +165,26 @@ function Estrellarse() {
     parado = true;
 }
 
+function DecidirCrearObstaculos() {
+    tiempoHastaObstaculo -= deltaTime;
+    if(tiempoHastaObstaculo <= 0) {
+        CrearObstaculo();
+    }
+}
 
+function DecidirCrearMonedas() {
+    tiempoHastaMoneda -= deltaTime;
+    if(tiempoHastaMoneda <= 0) {
+        CrearMoneda();
+    }
+}
+
+function DecidirCrearNubes() {
+    tiempoHastaNube -= deltaTime;
+    if(tiempoHastaNube <= 0) {
+        CrearNube();
+    }
+}
 
 
 
