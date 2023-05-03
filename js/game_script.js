@@ -121,7 +121,27 @@ function HandleKeyDown(ev){
     }
 }
 
+function Saltar(){
+    if(!saltando){
+        saltando = true;
+        dino.classList.remove("dino-corriendo");
+        audioSalto.currentTime = 0;
+        audioSalto.play();
+        if(dinoPosY > nivelDelMarCubriendo){
+            velY = impulso;
+        }else{
+            velY = impulsoEnAgua;
+        }
+    }
+}
 
+function MoverDinosaurio() {
+    if(dinoPosY < nivelDelMarCubriendo){
+        TocarSuelo();
+    }
+    dinoPosY += velY * deltaTime;
+    dino.style.bottom = dinoPosY+"px";
+}
 
 
 
