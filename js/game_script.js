@@ -269,7 +269,11 @@ function GanarPuntos() {
     suelo.style.animationDuration = (3/gameVel)+"s";
 }
 
-
+function GameOver() {
+    Estrellarse();
+    gameOver.style.display = "block";
+    audioGameOver.play();
+}
 
 
 
