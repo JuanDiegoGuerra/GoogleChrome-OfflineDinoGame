@@ -143,7 +143,27 @@ function MoverDinosaurio() {
     dino.style.bottom = dinoPosY+"px";
 }
 
+function TocarSuelo() {
+    if(saltando){
+        dino.classList.add("dino-corriendo");
+    }
+    saltando = false;
+}
 
+function MoverSuelo() {
+    sueloX += CalcularDesplazamiento();
+    suelo.style.left = -(sueloX % contenedor.clientWidth) + "px";
+}
+
+function CalcularDesplazamiento() {
+    return velEscenario * deltaTime * gameVel;
+}
+
+function Estrellarse() {
+    dino.classList.remove("dino-corriendo");
+    dino.classList.add("dino-estrellado");
+    parado = true;
+}
 
 
 
