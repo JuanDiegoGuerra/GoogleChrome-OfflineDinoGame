@@ -73,7 +73,17 @@ var audioMoneda;
 var audioSalto;
 var audioGameOver;
 
-
+function Start() {
+    gameOver = document.querySelector(".game-over");
+    suelo = document.querySelector(".suelo");
+    contenedor = document.querySelector(".contenedor");
+    textoScore = document.querySelector(".score");
+    dino = document.querySelector(".dino");
+    audioMoneda = document.querySelector(".audio-moneda");
+    audioSalto = document.querySelector(".audio-salto");
+    audioGameOver = document.querySelector(".audio-gameOver");
+    document.addEventListener("keydown", HandleKeyDown);
+}
 
 
 
