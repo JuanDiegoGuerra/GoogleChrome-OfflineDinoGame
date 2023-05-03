@@ -186,7 +186,17 @@ function DecidirCrearNubes() {
     }
 }
 
+function CrearMoneda() {
+    var moneda = document.createElement("div");
+    contenedor.appendChild(moneda);
+    moneda.classList.add("moneda");
+    moneda.posX = contenedor.clientWidth;
+    moneda.style.left = contenedor.clientWidth+"px";
+    moneda.style.bottom = monedaMinY + (monedaMaxY - monedaMinY) * Math.random() + "px";
 
+    interactuables.push(moneda);
+    tiempoHastaMoneda = tiempoMonedaMin + Math.random() * (tiempoMonedaMax-tiempoMonedaMin) / gameVel;
+}
 
 
 
