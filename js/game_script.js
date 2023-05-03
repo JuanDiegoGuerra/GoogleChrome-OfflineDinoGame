@@ -85,7 +85,27 @@ function Start() {
     document.addEventListener("keydown", HandleKeyDown);
 }
 
+function Update() {
+    if(parado) return;
+    
+    MoverDinosaurio();
+    MoverSuelo();
+    DecidirCrearMonedas();
+    DecidirCrearObstaculos();
+    DecidirCrearNubes();
+    MoverInteractuables();
+    MoverNubes();
+    DetectarColision();
 
+    if(dinoPosY >= nivelDelMar) { //fuera del agua
+
+        velY -= gravedad * deltaTime;
+    }else{
+        var empuje = VolumenSumergido() * densidad * gravedad;
+        var rozamiento = Math.sign(velY) * velY * velY * coeficienteRozamiento;
+        velY += (empuje - rozamiento - gravedad) * deltaTime;
+    }
+}
 
 
 
