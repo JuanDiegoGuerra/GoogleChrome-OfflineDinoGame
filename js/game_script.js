@@ -251,7 +251,23 @@ function MoverNubes() {
     }
 }
 
-
+function GanarPuntos() {
+    score++;
+    textoScore.innerText = score;
+    audioMoneda.currentTime = 0;
+    audioMoneda.play();
+    if(score == 7){
+        gameVel = 1.2;
+        contenedor.classList.add("mediodia");
+    }else if(score == 15) {
+        gameVel = 1.4;
+        contenedor.classList.add("tarde");
+    } else if(score == 25) {
+        gameVel = 1.7;
+        contenedor.classList.add("noche");
+    }
+    suelo.style.animationDuration = (3/gameVel)+"s";
+}
 
 
 
