@@ -275,6 +275,24 @@ function GameOver() {
     audioGameOver.play();
 }
 
-
+function DetectarColision() {
+    for (var i = 0; i < interactuables.length; i++) {
+        
+        if(interactuables[i].posX > dinoPosX + dino.clientWidth) {
+            //EVADE
+            break; //al estar en orden, no puede chocar con más
+        }else{
+            if(IsCollision(dino, interactuables[i], 10, 25, 10, 20)) {
+                if(interactuables[i].classList.contains("moneda")){
+                    GanarPuntos();
+                    interactuables[i].parentNode.removeChild(interactuables[i]);
+                    interactuables.splice(i, 1);
+                }else{
+                    GameOver();
+                }
+            }
+        }
+    }
+}
 
 
