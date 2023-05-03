@@ -227,7 +227,17 @@ function CrearNube() {
     tiempoHastaNube = tiempoNubeMin + Math.random() * (tiempoNubeMax-tiempoNubeMin) / gameVel;
 }
 
-
+function MoverInteractuables() {
+    for (var i = interactuables.length - 1; i >= 0; i--) {
+        if(interactuables[i].posX < -interactuables[i].clientWidth) {
+            interactuables[i].parentNode.removeChild(interactuables[i]);
+            interactuables.splice(i, 1);
+        }else{
+            interactuables[i].posX -= CalcularDesplazamiento();
+            interactuables[i].style.left = interactuables[i].posX+"px";
+        }
+    }
+}
 
 
 
