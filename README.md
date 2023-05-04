@@ -18,8 +18,6 @@ Simple html game _(original offline chrome game)_ you can add to your web page f
 
 - [Dino Game - Live Demo](https://juandiegoguerra.github.io/GoogleChrome-OfflineDinoGame/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
